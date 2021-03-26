@@ -29566,7 +29566,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"App.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"Form.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29580,13 +29580,553 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-var App = function App() {
-  return /*#__PURE__*/_react.default.createElement(_react.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "Hello Again"));
+var Form = function Form(props) {
+  return /*#__PURE__*/_react.default.createElement(_react.Fragment, {
+    className: "ui segment"
+  }, props.formHide === false ? /*#__PURE__*/_react.default.createElement("form", {
+    onSubmit: props.onSubmit
+  }, props.children, /*#__PURE__*/_react.default.createElement("button", {
+    className: "ui primary button",
+    onClick: props.handlePreview,
+    type: "submit"
+  }, "Preview")) : /*#__PURE__*/_react.default.createElement("div", null));
+};
+
+var _default = Form;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"PersonalInfo.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var PersonalInfo = function PersonalInfo(props) {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "ui segment"
+  }, /*#__PURE__*/_react.default.createElement("h1", {
+    className: "ui header"
+  }, "Personal Information"), /*#__PURE__*/_react.default.createElement("hr", {
+    className: "ui fitted divider"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "ui input label"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "first"
+  }, "First Name:"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    name: "first",
+    value: props.first,
+    onChange: props.handleFirst,
+    id: ""
+  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "ui input label"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "last"
+  }, "Last Name:"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    name: "last",
+    id: "",
+    onChange: props.handleLast,
+    value: props.last
+  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "ui input label"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "email"
+  }, "Email:"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "email",
+    name: "email",
+    id: "",
+    value: props.email,
+    onChange: props.handleEmail
+  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "ui input label"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "tel"
+  }, "Phone Number:"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "tel",
+    name: "tel",
+    id: "",
+    value: props.tel,
+    onChange: props.handleTel
+  })), /*#__PURE__*/_react.default.createElement("br", null));
+};
+
+var _default = PersonalInfo;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"Education.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Education = function Education(props) {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "ui segment"
+  }, /*#__PURE__*/_react.default.createElement("h1", {
+    className: "ui header"
+  }, "Education"), /*#__PURE__*/_react.default.createElement("hr", {
+    className: "ui fitted divider"
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "degree"
+  }, "Degree Awarded:"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    name: "degree",
+    value: props.degree,
+    onChange: props.handleDegree,
+    id: ""
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "school"
+  }, "School:"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    name: "school",
+    id: "",
+    onChange: props.handleSchool,
+    value: props.school
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "fromDate"
+  }, "Attended From:"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "date",
+    name: "fromDate",
+    id: "",
+    value: props.fromDate,
+    onChange: props.handleFromDate
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "toDate"
+  }, "Attended To:"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "date",
+    name: "toDate",
+    id: "",
+    value: props.toDate,
+    onChange: props.handleToDate
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
+    type: "checkbox",
+    name: "ongoing",
+    value: props.ongoing,
+    onChange: props.handleOngoing,
+    id: ""
+  }), " Currently Enrolled", /*#__PURE__*/_react.default.createElement("br", null), props.children);
+};
+
+var _default = Education;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"WorkExperience.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var WorkExperience = function WorkExperience(props) {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "ui segment"
+  }, /*#__PURE__*/_react.default.createElement("h1", {
+    className: "ui header"
+  }, "Work Experience"), /*#__PURE__*/_react.default.createElement("hr", {
+    className: "ui fitted divider"
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "jobTitle"
+  }, "Job Title"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    name: "jobTitle",
+    value: props.jobTitle,
+    onChange: props.handleJobTitle,
+    id: ""
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "employer"
+  }, "Employer:"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    name: "employer",
+    id: "",
+    onChange: props.handleEmployer,
+    value: props.employer
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "fromDateWork"
+  }, "Attended From:"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "date",
+    name: "fromDateWork",
+    id: "",
+    value: props.fromDateWork,
+    onChange: props.handleFromDateWork
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "toDateWork"
+  }, "Attended To:"), /*#__PURE__*/_react.default.createElement("input", {
+    type: "date",
+    name: "toDateWork",
+    id: "",
+    value: props.toDateWork,
+    onChange: props.handleToDateWork
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
+    type: "checkbox",
+    name: "ongoingWork",
+    value: props.ongoingWork,
+    onChange: props.handleOngoingWork,
+    id: ""
+  }), " Currently Employed", /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "activities"
+  }, "Responsibilities: "), /*#__PURE__*/_react.default.createElement("textarea", {
+    name: "activities",
+    id: "",
+    cols: "30",
+    rows: "10",
+    placeholder: "Main activities and responsibilities",
+    value: props.activities,
+    onChange: props.handleActivities
+  }), props.children);
+};
+
+var _default = WorkExperience;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"preview.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Preview = function Preview(props) {
+  console.log(props);
+  return /*#__PURE__*/_react.default.createElement("div", null, props.first, props.last, props.email, props.tel, props.degree, props.school, props.fromDate, props.toDate, props.ongoing, props.jobTitle, props.employer, props.fromDateWork, props.toDateWork, props.ongoingWork, props.activities, props.workChildren, props.educationChildren, /*#__PURE__*/_react.default.createElement("form", {
+    onSubmit: props.onSubmit
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "ui secondary button",
+    onClick: props.handlePreview,
+    type: "submit"
+  }, "Go Back")));
+};
+
+var _default = Preview;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _Form = _interopRequireDefault(require("./Form"));
+
+var _PersonalInfo = _interopRequireDefault(require("./PersonalInfo"));
+
+var _Education = _interopRequireDefault(require("./Education"));
+
+var _WorkExperience = _interopRequireDefault(require("./WorkExperience"));
+
+var _preview = _interopRequireDefault(require("./preview"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var App = function App(props) {
+  var _useState = (0, _react.useState)(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      first = _useState2[0],
+      setFirst = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      last = _useState4[0],
+      setLast = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      email = _useState6[0],
+      setEmail = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      tel = _useState8[0],
+      setTel = _useState8[1];
+
+  var _useState9 = (0, _react.useState)(''),
+      _useState10 = _slicedToArray(_useState9, 2),
+      degree = _useState10[0],
+      setDegree = _useState10[1];
+
+  var _useState11 = (0, _react.useState)(''),
+      _useState12 = _slicedToArray(_useState11, 2),
+      school = _useState12[0],
+      setSchool = _useState12[1];
+
+  var _useState13 = (0, _react.useState)(''),
+      _useState14 = _slicedToArray(_useState13, 2),
+      fromDate = _useState14[0],
+      setFromDate = _useState14[1];
+
+  var _useState15 = (0, _react.useState)(''),
+      _useState16 = _slicedToArray(_useState15, 2),
+      toDate = _useState16[0],
+      setToDate = _useState16[1];
+
+  var _useState17 = (0, _react.useState)(false),
+      _useState18 = _slicedToArray(_useState17, 2),
+      ongoing = _useState18[0],
+      setOngoing = _useState18[1];
+
+  var _useState19 = (0, _react.useState)(''),
+      _useState20 = _slicedToArray(_useState19, 2),
+      jobTitle = _useState20[0],
+      setJobTitle = _useState20[1];
+
+  var _useState21 = (0, _react.useState)(''),
+      _useState22 = _slicedToArray(_useState21, 2),
+      employer = _useState22[0],
+      setEmployer = _useState22[1];
+
+  var _useState23 = (0, _react.useState)(''),
+      _useState24 = _slicedToArray(_useState23, 2),
+      fromDateWork = _useState24[0],
+      setFromDateWork = _useState24[1];
+
+  var _useState25 = (0, _react.useState)(''),
+      _useState26 = _slicedToArray(_useState25, 2),
+      toDateWork = _useState26[0],
+      setToDateWork = _useState26[1];
+
+  var _useState27 = (0, _react.useState)(false),
+      _useState28 = _slicedToArray(_useState27, 2),
+      ongoingWork = _useState28[0],
+      setOngoingWork = _useState28[1];
+
+  var _useState29 = (0, _react.useState)(''),
+      _useState30 = _slicedToArray(_useState29, 2),
+      activities = _useState30[0],
+      setActivities = _useState30[1];
+
+  var _useState31 = (0, _react.useState)(null),
+      _useState32 = _slicedToArray(_useState31, 2),
+      workChildren = _useState32[0],
+      setWorkChildren = _useState32[1];
+
+  var _useState33 = (0, _react.useState)(null),
+      _useState34 = _slicedToArray(_useState33, 2),
+      educationChildren = _useState34[0],
+      setEducationChildren = _useState34[1];
+
+  var _useState35 = (0, _react.useState)(true),
+      _useState36 = _slicedToArray(_useState35, 2),
+      hide = _useState36[0],
+      setHide = _useState36[1];
+
+  var onSubmit = function onSubmit(e) {
+    e.preventDefault();
+  };
+
+  var handleFirst = function handleFirst(e) {
+    setFirst(e.target.value);
+  };
+
+  var handleLast = function handleLast(e) {
+    setLast(e.target.value);
+  };
+
+  var handleEmail = function handleEmail(e) {
+    setEmail(e.target.value);
+  };
+
+  var handleTel = function handleTel(e) {
+    setTel(e.target.value);
+  };
+
+  var handleDegree = function handleDegree(e) {
+    setDegree(e.target.value);
+  };
+
+  var handleSchool = function handleSchool(e) {
+    setSchool(e.target.value);
+  };
+
+  var handleFromDate = function handleFromDate(e) {
+    setFromDate(e.target.value);
+  };
+
+  var handleToDate = function handleToDate(e) {
+    setToDate(e.target.value);
+  };
+
+  var handleOngoing = function handleOngoing(e) {
+    setOngoing(!ongoing);
+  };
+
+  var handleJobTitle = function handleJobTitle(e) {
+    setJobTitle(e.target.value);
+  };
+
+  var handleEmployer = function handleEmployer(e) {
+    setEmployer(e.target.value);
+  };
+
+  var handleFromDateWork = function handleFromDateWork(e) {
+    setFromDateWork(e.target.value);
+  };
+
+  var handleToDateWork = function handleToDateWork(e) {
+    setToDateWork(e.target.value);
+  };
+
+  var handleOngoingWork = function handleOngoingWork(e) {
+    setOngoingWork(!ongoing);
+  };
+
+  var handleActivities = function handleActivities(e) {
+    setActivities(e.target.value);
+  };
+
+  var educations = [];
+
+  var addEducation = function addEducation() {
+    setEducationChildren(educationChildren + 1);
+    return educations;
+  };
+
+  var removeEducation = function removeEducation() {
+    setEducationChildren(educationChildren - 1);
+    return educations.pop();
+  };
+
+  for (var i = 0; i < educationChildren; i += 1) {
+    educations.push( /*#__PURE__*/_react.default.createElement(_Education.default, {
+      key: i,
+      number: i
+    }, /*#__PURE__*/_react.default.createElement("button", {
+      className: "ui button red",
+      onClick: removeEducation
+    }, " - Education")));
+  }
+
+  var workExperience = [];
+
+  var addWorkExperience = function addWorkExperience() {
+    setWorkChildren(workChildren + 1);
+    return workExperience;
+  };
+
+  var removeWorkExperience = function removeWorkExperience() {
+    setWorkChildren(workChildren - 1);
+    return workExperience.pop(workChildren);
+  };
+
+  for (var i = 0; i < workChildren; i += 1) {
+    workExperience.push( /*#__PURE__*/_react.default.createElement(_WorkExperience.default, {
+      key: i,
+      number: i
+    }, /*#__PURE__*/_react.default.createElement("button", {
+      className: "ui button red",
+      onClick: removeWorkExperience
+    }, " - Work Experience")));
+  }
+
+  var handlePreview = function handlePreview() {
+    setHide(!hide);
+  };
+
+  return /*#__PURE__*/_react.default.createElement(_react.Fragment, null, /*#__PURE__*/_react.default.createElement(_Form.default, {
+    formHide: !hide,
+    onSubmit: onSubmit,
+    handlePreview: handlePreview
+  }, /*#__PURE__*/_react.default.createElement(_PersonalInfo.default, {
+    first: first,
+    handleFirst: handleFirst,
+    last: last,
+    handleLast: handleLast,
+    email: email,
+    handleEmail: handleEmail,
+    tel: tel,
+    handleTel: handleTel
+  }), /*#__PURE__*/_react.default.createElement(_Education.default, {
+    degree: degree,
+    handleDegree: handleDegree,
+    school: school,
+    handleSchool: handleSchool,
+    fromDate: fromDate,
+    handleFromDate: handleFromDate,
+    toDate: toDate,
+    handleToDate: handleToDate,
+    ongoing: ongoing,
+    handleOngoing: handleOngoing
+  }), educations, /*#__PURE__*/_react.default.createElement("button", {
+    className: "ui button",
+    onClick: addEducation
+  }, " + Education & Training "), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_WorkExperience.default, {
+    jobTitle: jobTitle,
+    handleJobTitle: handleJobTitle,
+    employer: employer,
+    handleEmployer: handleEmployer,
+    fromDateWork: fromDateWork,
+    handleFromDateWork: handleFromDateWork,
+    toDateWork: toDateWork,
+    handleToDateWork: handleToDateWork,
+    ongoingWork: ongoingWork,
+    handleOngoing: handleOngoingWork,
+    activities: activities,
+    handleActivities: handleActivities
+  }), workExperience, /*#__PURE__*/_react.default.createElement("button", {
+    className: "ui button",
+    onClick: addWorkExperience
+  }, " + Work Experience "), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null)), hide === true ? /*#__PURE__*/_react.default.createElement("div", null, "Click to view preview") : /*#__PURE__*/_react.default.createElement(_preview.default, {
+    first: first,
+    last: last,
+    email: email,
+    tel: tel,
+    degree: degree,
+    school: school,
+    fromDate: fromDate,
+    toDate: toDate,
+    ongoing: ongoing,
+    jobTitle: jobTitle,
+    employer: employer,
+    fromDateWork: fromDateWork,
+    toDateWork: toDateWork,
+    ongoingWork: ongoingWork,
+    activities: activities,
+    workChildren: workExperience,
+    educationChildren: educations,
+    onSubmit: onSubmit,
+    handlePreview: handlePreview
+  }));
 };
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Form":"Form.js","./PersonalInfo":"PersonalInfo.js","./Education":"Education.js","./WorkExperience":"WorkExperience.js","./preview":"preview.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -29626,7 +30166,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50260" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51339" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
